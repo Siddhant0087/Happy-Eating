@@ -30,9 +30,9 @@
 
 .res-card {
   margin: 5px;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   padding: 5px;
-  width: 200px;
+  width: 249px;
   height: auto;
 }
 
@@ -47,4 +47,25 @@
 
 .res-logo {
   width: 100%;
+}
+
+.filter {
+  padding: 10px;
+}
+
+.filter-btn {
+  cursor: pointer;
+}
+
+.shimmer-container {
+  display: flex;
+  
+}
+
+.shimmer-card {
+  margin: 5px;
+  padding: 5px;
+  width: 249px;
+  height: auto;
+  color: #f0f0f0;
 }
