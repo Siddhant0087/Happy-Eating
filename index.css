@@ -79,3 +79,8 @@
 .filter {
   display: flex;
 }
+
+
+.search {
+  padding: 10px;
+}
