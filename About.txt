@@ -7,3 +7,14 @@ Day 5:- 5th video completed
 Day 6:- 6th 1:02:22 video completed
 Day 7:- 6th video completed
 Day 8:- 7th 1:03:45 video completed
+Day 9:- 7th video completed
+Day 10:- 7th 1:10:54 video completed
+
+
+
+
+
+
+# 2 types Routing in web page
+    - Client Side Routing
+    - Server Side Routing

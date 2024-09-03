@@ -28,12 +28,13 @@
   /* justify-content: space-around; */
 }
 
-.res-card {
+.res-card{
   margin: 5px;
   /* justify-content: space-between; */
   padding: 5px;
   width: 249px;
   height: auto;
+  text-decoration: none;
 }
 
 .res-card:hover {
@@ -83,4 +84,15 @@
 
 .search {
   padding: 10px;
+}
+
+
+.res-card h3 {
+  text-decoration: none;
+}
+
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
+  margin: 10px;
 }
