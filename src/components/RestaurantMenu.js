@@ -1,26 +1,27 @@
-import { useState, useEffect } from 'react';
 import Shimmer from './Shimmer';
 import { useParams } from 'react-router-dom';
-import { MENU_API } from '../utils/constants';
+import useRestaurantMenu from '../utils/useRestaurantMenu';
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
+  // const [resInfo, setResInfo] = useState(null);
 
   const { id } = useParams();
   // console.log('Id ' + id);
   // console.log(params);
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
+  const resInfo = useRestaurantMenu(id);
 
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_API + id);
-    const json = await data.json();
+  // useEffect(() => {
+  //   fetchMenu();
+  // }, []);
 
-    console.log(json.data);
-    setResInfo(json.data);
-  };
+  // const fetchMenu = async () => {
+  //   const data = await fetch(MENU_API + id);
+  //   const json = await data.json();
+
+  //   console.log(json.data);
+  //   setResInfo(json.data);
+  // };
 
   if (resInfo === null) return <Shimmer />;
 
@@ -30,15 +31,15 @@ const RestaurantMenu = () => {
   const { itemCards } =
     resInfo?.cards[4].groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
 
-  const nonVegItems =
-    resInfo.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card
-      .categories[0].itemCards;
+  // const nonVegItems =
+  //   resInfo.cards[4].groupedCard.cardGroupMap.REGULAR.cards[2].card.card
+  //     .categories[0].itemCards;
 
-  const totalMenu = [...itemCards, ...nonVegItems];
+  // const totalMenu = [...itemCards, ...nonVegItems];
 
-  totalMenu.sort((a, b) => a.card.info.name.localeCompare(b.card.info.name));
+  // totalMenu.sort((a, b) => a.card.info.name.localeCompare(b.card.info.name));
 
-  console.log(totalMenu);
+  // console.log(totalMenu);
 
   return (
     <div className='resMenu'>
@@ -49,7 +50,7 @@ const RestaurantMenu = () => {
       <h2>Menu</h2>
       <ul>
         <h4>Recommended</h4>
-        {totalMenu?.map((item) => (
+        {itemCards?.map((item) => (
           <li key={item?.card?.info?.id}>
             {item?.card?.info?.name} - {item?.card?.info?.price / 100}
           </li>
